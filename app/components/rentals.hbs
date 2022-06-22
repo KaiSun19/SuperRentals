@@ -1,0 +1,14 @@
+<div class="rentals">
+  <label class="search-label">
+    <span>Where would you like to stay?</span>
+    <Input @value={{this.query}} class="light" /> {{!-- stores the user input as this.query using @value --}}
+  </label>
+
+  <ul class="results">
+    <Rentals::Filter @rentals={{@rentals}} @query={{this.query}} as |results|> {{!-- the passed in rentals and query are shown as the args in filter.js  --}}
+      {{#each results as |rental|}}   {{!-- |results| is an array that will be iterated through in this block --}}
+        <li><Rental @rental={{rental}} /></li>
+      {{/each}}
+    </Rentals::Filter>
+  </ul>
+</div>

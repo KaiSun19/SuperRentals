@@ -1,0 +1,28 @@
+
+<div class="listing-form">
+    <BsForm @formLayout="vertical" @model={{this}} @onSubmit={{this.submit}} as |form|>
+
+        <form.element @controlType="text" @label="Name" @property="text" as |el|>
+            <el.control placeholder="Property Name" required class="name-control"/>
+        </form.element>
+        <form.element @controlType="text" @label="Property Type" @property="text" as |el|>
+            <el.control placeholder="Property Type" required  class="property-control"/>
+        </form.element>
+        <form.element @controlType="text" @label="Property Owner" @property="text" as |el|>
+            <el.control placeholder="Owner" required class="owner-control" />
+        </form.element>
+        <form.element @controlType="text" @label="Property Address" @property="text" as |el|>
+            <el.control placeholder="Property Address" required  class="address-control"/>
+        </form.element>
+        <form.element @controlType="email" @label="Email" @property="email" as |el|>
+            <el.control placeholder="Email" required  class="email-control"/>
+        </form.element>
+
+        <form.element @controlType="file" @label="Property Image" @property="file" as |el|>
+            <el.control placeholder="Upload an image"  />
+        </form.element>
+
+        <form.submitButton>Submit</form.submitButton>
+
+    </BsForm>
+</div>

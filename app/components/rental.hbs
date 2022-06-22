@@ -1,0 +1,34 @@
+<article class="rental">
+    <Rental::Image {{!-- this is invoked as Folder::ComponentName because it is a namespace component that belongs to a folder--}}
+    src= {{@rental.image}}
+    alt="A picture of {{@rental.title}}"
+    />
+  <div class="details">
+    <h3>
+      <LinkTo @route="rental" @model={{@rental}}>  {{!--  --}}
+        {{@rental.title}}
+      </LinkTo>
+    </h3>
+    <div class="detail owner">
+      <span>Owner:</span> {{@rental.owner}} 
+    </div>
+    <div class="detail type">
+      <span>Type:</span> {{@rental.type}}
+    </div>
+    <div class="detail location">
+      <span>Location:</span> {{@rental.location}}
+    </div>
+    <div class="detail bedrooms">
+      <span>Number of bedrooms:</span> {{@rental.bedrooms}}
+    </div>
+  </div>
+  {{yield}}
+   <Map
+    @lat={{@rental.location.lat}} {{!-- @lat is a prop that was created in map.hbs with {{@lat}} --}}
+    @lng={{@rental.location.lng}}
+    @zoom="9"
+    @width="150"
+    @height="150"
+    alt="A map of {{@rental.title}}" {{!-- handlebar expressions {{{}}} can be used directly within a string --}}
+  />
+</article>

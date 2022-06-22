@@ -1,0 +1,11 @@
+<div class="map">
+  <img
+    alt="Map image at coordinates {{@lat}},{{@lng}}" {{!-- direct interpolation into a string  --}}
+    ...attributes
+    src={{this.src}} {{!-- this.src invokes the src getter method which returns the src  --}}
+    width={{@width}} height={{@height}}
+  >
+</div>
+
+  {{!-- {{@lng}} is a value like a prop that is passed into later when Map component is invoked--}}
+
